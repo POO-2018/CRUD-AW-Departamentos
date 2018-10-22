@@ -111,5 +111,38 @@ namespace CRUD_AW_Departamentos
                 conn.Close();
             }
         }
+
+        public bool Eliminar(Departamento departamento)
+        {
+            // Crear el comando con el Stored Procedure
+            SqlCommand cmd = new SqlCommand("sp_EliminarDepartamento", conn);
+
+            // Establecer el comando como un Stored Procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Parámetros del Stored Procedure
+            cmd.Parameters.Add(new SqlParameter("@nombreDepartamento", SqlDbType.NVarChar, 50));
+            cmd.Parameters["@nombreDepartamento"].Value = departamento.name;
+
+            try
+            {
+                // Establecer la conexión
+                conn.Open();
+
+                // Query de eliminación
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                // Cerrar la conexión
+                conn.Close();
+            }
+        }
     }
 }
