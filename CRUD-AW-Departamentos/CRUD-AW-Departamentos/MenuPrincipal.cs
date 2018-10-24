@@ -31,8 +31,8 @@ namespace CRUD_AW_Departamentos
 
         private void btnEliminarDepartamento_Click(object sender, EventArgs e)
         {
-            //EliminarDepartamento eliminarDepartamento = new EliminarDepartamento();
-            //eliminarDepartamento.Show();
+            EliminarDepartamento eliminarDepartamento = new EliminarDepartamento();
+            eliminarDepartamento.Show();
         }
     }
 }
