@@ -76,7 +76,7 @@ namespace CRUD_AW_Departamentos
         {
             // Creación del query de inserción
             sql = @"INSERT INTO HumanResources.Department(Name, GroupName, ModifiedDate)
-                    VALUES (@name, @groupName, @modifiedDate";
+                    VALUES (@name, @groupName, @modifiedDate)";
 
             // Crear el comando
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -100,7 +100,7 @@ namespace CRUD_AW_Departamentos
                 // Como el query de inserción se ejecutó correctamente retornar true
                 return true;
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 Console.WriteLine("Error al momento de realizar la inserción");
                 return false;

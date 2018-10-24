@@ -25,8 +25,8 @@ namespace CRUD_AW_Departamentos
 
         private void btnCrearDepartamento_Click(object sender, EventArgs e)
         {
-            //InsertarDepartamento insertarDepartamento = new InsertarDepartamento();
-            //insertarDepartamento.Show();
+            InsertarDepartamento insertarDepartamento = new InsertarDepartamento();
+            insertarDepartamento.Show();
         }
 
         private void btnEliminarDepartamento_Click(object sender, EventArgs e)
